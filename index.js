@@ -30,28 +30,34 @@ async function main() {
   const { text, textColor, shape, shapeColor } = answers;
 
   const svgHeader = `<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<svg width="300" height="200" xmlns="http://www.w3.org/2000/svg">`;
-
-  let shapeElement = '';
-  switch (shape) {
-    case 'circle':
-      shapeElement = `<circle cx="150" cy="100" r="50" fill="${shapeColor}" />`;
-      break;
-    case 'triangle':
-      shapeElement = `<polygon points="150,50 100,150 200,150" fill="${shapeColor}" />`;
-      break;
-    case 'square':
-      shapeElement = `<rect x="100" y="50" width="100" height="100" fill="${shapeColor}" />`;
-      break;
+  <svg width="300" height="200" xmlns="http://www.w3.org/2000/svg">`;
+  
+    let shapeElement = '';
+    switch (shape) {
+      case 'circle':
+        shapeElement = `<circle cx="150" cy="100" r="50" fill="${shapeColor}" />`;
+        break;
+      case 'triangle':
+        shapeElement = `<polygon points="150,50 100,150 200,150" fill="${shapeColor}" />`;
+        break;
+      case 'square':
+        shapeElement = `<rect x="100" y="50" width="100" height="100" fill="${shapeColor}" />`;
+        break;
+    }
+  
+    const fontSize = 40;
+    const textY = 100 + (fontSize / 3);
+  
+    const textElement = `<text x="150" y="${textY}" text-anchor="middle" font-size="${fontSize}" fill="${textColor}" font-family="Arial">${text}</text>`;
+    const svgFooter = `</svg>`;
+  
+    const svgContent = `${svgHeader}\n${shapeElement}\n${textElement}\n${svgFooter}`;
+  
+    await fs.writeFile('logo.svg', svgContent);
+    console.log('Generated logo.svg');
   }
 
-  const textElement = `<text x="150" y="110" text-anchor="middle" font-size="48" fill="${textColor}" font-family="Arial">${text}</text>`;
-  const svgFooter = `</svg>`;
-
-  const svgContent = `${svgHeader}\n${shapeElement}\n${textElement}\n${svgFooter}`;
-
-  await fs.writeFile('logo.svg', svgContent);
-  console.log('Generated logo.svg');
-}
-
 main();
+
+
+module.exports = main;
