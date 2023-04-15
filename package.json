@@ -1,27 +1,18 @@
 {
-  "name": "logog",
+  "name": "logogen",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
-  "type": "module",
+  "directories": {
+    "lib": "lib"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/SmilieKay/LogoG.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/SmilieKay/LogoG/issues"
-  },
-  "homepage": "https://github.com/SmilieKay/LogoG#readme",
   "dependencies": {
-    "inquirer": "^9.1.5"
-  },
-  "devDependencies": {
-    "jest": "^29.5.0"
+    "inquirer": "^7.3.0"
   }
 }
