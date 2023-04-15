@@ -1,0 +1,24 @@
+{
+  "name": "logog",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "module",
+    "url": "git+https://github.com/SmilieKay/LogoG.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/SmilieKay/LogoG/issues"
+  },
+  "homepage": "https://github.com/SmilieKay/LogoG#readme",
+  "dependencies": {
+    "inquirer": "^9.1.5"
+  }
+}
